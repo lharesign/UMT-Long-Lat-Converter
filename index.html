@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <table>
+      <!-- Header row -->
+      <tr>
+        <th colspan="2">
+          Geographic<br />(<em>degrees decimal</em>)
+        </th>
+        <th >To/From</th>
+        <th colspan="2" >UTM</th>
+      </tr>
+
+      <!-- Easting row (plus command button) -->
+      <!-- The size attribute for the button input keeps the control
+             from looking too bad on browsers that don't support buttons
+             (even though the control is useless in this case).
+             The &gt; code is used for browsers that will interpret the
+             first right angle bracket in the VALUE field as the tag
+             terminator. -->
+      <tr>
+        <td>lon</td>
+        <td><input type="text" size="15" id="txtLongitude" value="" /></td>
+        <td >
+          <input
+            type="button"
+            size="4"
+            name="btnToUTM"
+            value="&gt;&gt;"
+            onClick="btnToUTM_OnClick ()"
+          />
+        </td>
+        <td>x (easting)</td>
+        <td><input type="text" size="15" id="txtX" value="" /></td>
+      </tr>
+
+      <!-- Northing row (plus command button) -->
+      <tr>
+        <td>lat</td>
+        <td><input type="text" size="15" id="txtLatitude" value="" /></td>
+        <td >
+          <input
+            type="button"
+            size="4"
+            name="btnToGeographic"
+            value="&lt;&lt;"
+            onClick="btnToGeographic_OnClick ()"
+          />
+        </td>
+        <td>y (northing)</td>
+        <td><input type="text" size="15" id="txtY" value="" /></td>
+      </tr>
+
+      <!-- UTM zone row -->
+      <tr>
+        <td colspan="3"></td>
+        <td>zone</td>
+        <td><input type="text" size="4" id="txtZone" value="" /></td>
+      </tr>
+
+      <!-- Hemisphere row -->
+      <tr>
+        <td colspan="3"></td>
+        <td colspan="2">
+          hemisphere
+          <!-- OnClick properties circumvent a Netscape bug that reverses
+                 the indices of the buttons -->
+          <input
+            type="radio"
+            id="rbtnHemisphereN"
+            value="N"
+            checked
+            OnClick="0"
+          />N
+          <input type="radio" id="rbtnHemisphereS" value="S" OnClick="0" />S
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
